@@ -22,3 +22,4 @@ Initial tasks:
 1. Choose Bulma theme and get link to CDN/add to HTML
 2. Create user flow diagram
 3. Create wireframe
+4.
