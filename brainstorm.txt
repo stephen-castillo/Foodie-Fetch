@@ -1,0 +1,24 @@
+Project Title: ideas include FoodieFetch, YumYield, RecipeRakeIn, Munchy
+
+Project Description:
+
+An application that allows users to find recipes based on diets, allergies, and cuisine type that also provides nutritional information.
+
+User Story:
+
+AS A person who likes to cook
+I WANT to easily find recipes according to my specifications
+SO THAT I can have multiple options without having to filter them manually
+
+APIs to be used:
+
+Recipe Search API by Edamam: https://developer.edamam.com/edamam-docs-recipe-api
+Nutrition Analysis by Edamam: https://developer.edamam.com/edamam-docs-nutrition-api
+
+Additional notes/brainstorming:
+
+Initial tasks:
+
+1. Choose Bulma theme and get link to CDN/add to HTML
+2. Create user flow diagram
+3. Create wireframe
