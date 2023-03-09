@@ -1,2 +1,2 @@
-# Project-1
-Undescribed group project
+# Foodie-Fetch
+Recipe grabbing group project
