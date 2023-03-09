@@ -1,8 +1,11 @@
 
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-/* General styling */
+.hero {
+    background: rgb(90,194,99);
+    background: radial-gradient(circle, rgba(90,194,99,1) 0%, rgba(76,130,49,1) 100%);
+}
 
-.content {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.navbar-center {
+    font-family: 'Damion', cursive;
 }
