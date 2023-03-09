@@ -6,3 +6,42 @@
 .content {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 4fr 22fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Navbar Navbar Navbar Navbar"
+      "Image Recipe-Name-and-info Recipe-Name-and-info Recipe-Name-and-info"
+      "Ingredients Instructions Instructions Nutritional-Facts"
+      "Ingredients Instructions Instructions Nutritional-Facts";
+      background-color: aliceblue;
+  }
+  .Navbar { grid-area: Navbar;
+    color: white;
+background-color: blue;
+ }
+
+  .Image { grid-area: Image;
+ color: white;
+    background-color: blueviolet;
+ }
+
+  .Recipe-Name-and-info { grid-area: Recipe-Name-and-info;
+    background-color: burlywood;
+   }
+
+  .Ingredients { grid-area: Ingredients;
+    background-color: greenyellow;
+   }
+   
+   .Instructions { grid-area: Instructions;
+     background-color: lightslategrey;
+    }
+    
+   .Nutritional-Facts { grid-area: Nutritional-Facts;
+    background-color: lightseagreen;
+  }
