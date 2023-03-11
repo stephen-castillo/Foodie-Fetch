@@ -9,3 +9,26 @@
 .navbar-center {
     font-family: 'Damion', cursive;
 }
+
+
+
+  .Image { grid-area: Image;
+ color: white;
+    background-color: blueviolet;
+ }
+
+  .Recipe-Name-and-info { grid-area: Recipe-Name-and-info;
+    background-color: burlywood;
+   }
+
+  .Ingredients { grid-area: Ingredients;
+    background-color: greenyellow;
+   }
+   
+   .Instructions { grid-area: Instructions;
+     background-color: lightslategrey;
+    }
+    
+   .Nutritional-Facts { grid-area: Nutritional-Facts;
+    background-color: lightseagreen;
+  }
