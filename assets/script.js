@@ -51,8 +51,8 @@ form.addEventListener('submit', (event) => {
   console.log('Form data:', data);
   console.log('checkboxes:', data2);
 
-  var newarray = [...data,...data2];
-  console.log(newarray);
+  data.health = data2;
+  console.log(data);
 });
 
 // Hide recipe section for now
