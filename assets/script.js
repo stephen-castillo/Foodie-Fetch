@@ -37,5 +37,21 @@ function handleData(data){
 //getRecipe('chicken salad');
 
 console.log('Data here');
-getRecipe(handleData, recSearch);
+//getRecipe(handleData, recSearch);
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // prevent the default form submission
+
+  const formData = new FormData(event.target); // get the form data
+  const data = Object.fromEntries(formData.entries()); // convert the FormData object to a plain object
+  const data2 = formData.getAll('health');
+
+  console.log('Form data:', data);
+  console.log('checkboxes:', data2);
+
+  var newarray = [...data,...data2];
+  console.log(newarray);
+});
 
