@@ -64,12 +64,12 @@
                     <div class="control">
                       <div class="select is-medium">
                         <select>
-                          <option>Balanced</option>
-                          <option>High-Fiber</option>
-                          <option>High-Protein</option>
-                          <option>Low-Carb</option>
-                          <option>Low-Fat</option>
-                          <option>Low-Sodium</option>
+                          <option value="balanced">Balanced</option>
+                          <option value="high-fiber">High-Fiber</option>
+                          <option value="high-protein">High-Protein</option>
+                          <option value="low-carb">Low-Carb</option>
+                          <option value="low-fat">Low-Fat</option>
+                          <option value="low-sodium">Low-Sodium</option>
                         </select>
                       </div>
                     </div>
@@ -81,7 +81,7 @@
                     <label class="label">Search by Meal Type</label>
                     <div class="control">
                       <div class="select is-medium">
-                        <select>
+                        <select name="mealType">
                           <option value="breakfast">Breakfast</option>
                           <option value="brunch">Brunch</option>
                           <option value="lunch/dinner">Lunch/Dinner</option>
@@ -168,41 +168,39 @@
               <div class="field">
                 <label class="label">Customize search according to your health needs!</label>
                 <div class="control box">
-                  <label class="checkbox"><input type="checkbox"> Wheat-free</label>
-                  <label class="checkbox"><input type="checkbox"> Gluten-free</label>
-                  <label class="checkbox"><input type="checkbox"> Dairy-free</label>
-                  <label class="checkbox"><input type="checkbox"> Vegan</label>
-                  <label class="checkbox"><input type="checkbox"> Vegetarian</label>
-                  <label class="checkbox"><input type="checkbox"> Tree nut-free</label>
-                  <label class="checkbox"><input type="checkbox"> Sulfite-free</label>
-                  <label class="checkbox"><input type="checkbox"> Sugar-conscious</label>
-                  <label class="checkbox"><input type="checkbox"> Soy-free</label>
-                  <label class="checkbox"><input type="checkbox"> Shellfish-free</label>
-                  <label class="checkbox"><input type="checkbox"> Sesame-free</label>
-                  <label class="checkbox"><input type="checkbox"> Red Meat-free</label>
-                  <label class="checkbox"><input type="checkbox"> Pork-free</label>
-                  <label class="checkbox"><input type="checkbox"> Pescatarian</label>
-                  <label class="checkbox"><input type="checkbox"> Peanut-free</label>
-                  <label class="checkbox"><input type="checkbox"> Paleo</label>
-                  <label class="checkbox"><input type="checkbox"> No oil added</label>
-                  <label class="checkbox"><input type="checkbox"> Mustard-free</label>
-                  <label class="checkbox"><input type="checkbox"> Mollusk-free</label>
-                  <label class="checkbox"><input type="checkbox"> Mediterranean</label>
-                  <label class="checkbox"><input type="checkbox"> Lupine-free</label>
-                  <label class="checkbox"><input type="checkbox"> Low sugar</label>
-                  <label class="checkbox"><input type="checkbox"> Low potassium</label>
-                  <label class="checkbox"><input type="checkbox"> Kosher</label>
-                  <label class="checkbox"><input type="checkbox"> Kidney-friendly</label>
-                  <label class="checkbox"><input type="checkbox"> Keto-friendly</label>
-                  <label class="checkbox"><input type="checkbox"> Immuno-supportive</label>
-                  <label class="checkbox"><input type="checkbox"> FODMAP-free</label>
-                  <label class="checkbox"><input type="checkbox"> Fish-free</label>
-                  <label class="checkbox"><input type="checkbox"> Egg-free</label>
-                  <label class="checkbox"><input type="checkbox"> DASH</label>
-                  <label class="checkbox"><input type="checkbox"> Crustacean-free</label>
-                  <label class="checkbox"><input type="checkbox"> Celery-Free</label>
-                  <label class="checkbox"><input type="checkbox"> Alcohol-free</label>
-                  <label class="checkbox"><input type="checkbox"> Alcohol-cocktail</label>
+                  <label class="checkbox"><input type="checkbox" value="wheat-free"> Wheat-free</label>
+                  <label class="checkbox"><input type="checkbox" value="gluten-free"> Gluten-free</label>
+                  <label class="checkbox"><input type="checkbox" value="dairy-free"> Dairy-free</label>
+                  <label class="checkbox"><input type="checkbox" value="vegan"> Vegan</label>
+                  <label class="checkbox"><input type="checkbox" value="vegetarian"> Vegetarian</label>
+                  <label class="checkbox"><input type="checkbox" value="tree-nut-free"> Tree nut-free</label>
+                  <label class="checkbox"><input type="checkbox" value="sulfite-free"> Sulfite-free</label>
+                  <label class="checkbox"><input type="checkbox" value="sugar-conscious"> Sugar-conscious</label>
+                  <label class="checkbox"><input type="checkbox" value="soy-free"> Soy-free</label>
+                  <label class="checkbox"><input type="checkbox" value="shellfish-free"> Shellfish-free</label>
+                  <label class="checkbox"><input type="checkbox" value="sesame-free"> Sesame-free</label>
+                  <label class="checkbox"><input type="checkbox" value="red-meat-free"> Red Meat-free</label>
+                  <label class="checkbox"><input type="checkbox" value="pork-free"> Pork-free</label>
+                  <label class="checkbox"><input type="checkbox" value="pescatarian"> Pescatarian</label>
+                  <label class="checkbox"><input type="checkbox" value="peanut-free"> Peanut-free</label>
+                  <label class="checkbox"><input type="checkbox" value="paleo"> Paleo</label>
+                  <label class="checkbox"><input type="checkbox" value="No-oil-added"> No oil added</label>
+                  <label class="checkbox"><input type="checkbox" value="mustard-free"> Mustard-free</label>
+                  <label class="checkbox"><input type="checkbox" value="mollusk-free"> Mollusk-free</label>
+                  <label class="checkbox"><input type="checkbox" value="lupine-free"> Lupine-free</label>
+                  <label class="checkbox"><input type="checkbox" value="low-sugar"> Low sugar</label>
+                  <label class="checkbox"><input type="checkbox" value="low-potassium"> Low potassium</label>
+                  <label class="checkbox"><input type="checkbox" value="kosher"> Kosher</label>
+                  <label class="checkbox"><input type="checkbox" value="kidney-friendly"> Kidney-friendly</label>
+                  <label class="checkbox"><input type="checkbox" value="keto-friendly"> Keto-friendly</label>
+                  <label class="checkbox"><input type="checkbox" value="immuno-supportive"> Immuno-supportive</label>
+                  <label class="checkbox"><input type="checkbox" value="fodmap-free"> FODMAP-free</label>
+                  <label class="checkbox"><input type="checkbox" value="fish-free"> Fish-free</label>
+                  <label class="checkbox"><input type="checkbox" value="egg-free"> Egg-free</label>
+                  <label class="checkbox"><input type="checkbox" value="DASH"> DASH</label>
+                  <label class="checkbox"><input type="checkbox" value="crustacean-free"> Crustacean-free</label>
+                  <label class="checkbox"><input type="checkbox" value="celery-free"> Celery-Free</label>
+                  <label class="checkbox"><input type="checkbox" value="alcohol-free"> Alcohol-free</label>
                 </div>
               </div>
             </div>
