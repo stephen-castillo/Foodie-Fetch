@@ -21,7 +21,7 @@
         <!--Main banner with Navbar(always constant)-->
         <section class="hero is-success">
             <div class="hero-body">
-                <nav class="navbar">
+                <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="container">
                         <div id="navMenu" class="navbar-menu">
                             <div class="navbar-start">
@@ -53,164 +53,161 @@
         
         <!--Home page/main view-->
       
-        <section class="section is-medium has-background-info-light">
-            <h1 class="title is-4">
-                    Category Selection
-            </h1>
-            <div class="columns">
-                <div class="column">
-                <div class="field">
-                    <label class="label">Search by Diet</label>
-                    <div class="control">
-                      <div class="select is-medium">
-                        <select>
-                          <option value="balanced">Balanced</option>
-                          <option value="high-fiber">High-Fiber</option>
-                          <option value="high-protein">High-Protein</option>
-                          <option value="low-carb">Low-Carb</option>
-                          <option value="low-fat">Low-Fat</option>
-                          <option value="low-sodium">Low-Sodium</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="column">
+        <form action="self">
+          <section class="section is-medium has-background-info-light">
+              <h1 class="title is-4">
+                      Category Selection
+              </h1>
+              <div class="columns">
+                  <div class="column">
                   <div class="field">
-                    <label class="label">Search by Meal Type</label>
-                    <div class="control">
-                      <div class="select is-medium">
-                        <select name="mealType">
-                          <option value="breakfast">Breakfast</option>
-                          <option value="brunch">Brunch</option>
-                          <option value="lunch/dinner">Lunch/Dinner</option>
-                          <option value="snack">Snack</option>
-                          <option value="teatime">Tea time</option>
-                        </select>
+                      <label class="label">Search by Diet</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select name="diet">
+                            <option value="balanced">Balanced</option>
+                            <option value="high-fiber">High-Fiber</option>
+                            <option value="high-protein">High-Protein</option>
+                            <option value="low-carb">Low-Carb</option>
+                            <option value="low-fat">Low-Fat</option>
+                            <option value="low-sodium">Low-Sodium</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="column">
-                <div class="field">
-                    <label class="label">Search by Dish Type</label>
-                    <div class="control">
-                      <div class="select is-medium">
-                        <select>
-                          <option value="alcohol cocktail">Alcohol Cocktail</option>
-                          <option value="biscuits and cookies">Biscuits and cookies</option>
-                          <option value="bread">Bread</option>
-                          <option value="cereals">Cereals</option>
-                          <option value="condiments and sauces">Condiments and sauces</option>
-                          <option value="desserts">Desserts</option>
-                          <option value="drinks">Drinks</option>
-                          <option value="egg">Egg</option>
-                          <option value="ice cream and custard">Ice cream and custard</option>
-                          <option value="main course">Main course</option>
-                          <option value="pancake">Pancake</option>
-                          <option value="pasta">Pasta</option>
-                          <option value="pastry">Pastry</option>
-                          <option value="pies and tarts">Pies and tarts</option>
-                          <option value="pizza">Pizza</option>
-                          <option value="preps">Preps</option>
-                          <option value="preserve">Preserve</option>
-                          <option value="salad">Salad</option>
-                          <option value="sandwiches">Sandwiches</option>
-                          <option value="seafood">Seafood</option>
-                          <option value="side dish">Side dish</option>
-                          <option value="soup">Soup</option>
-                          <option value="special occasions">Special Occasions</option>
-                          <option value="starter">Starter</option>
-                          <option value="sweets">Sweets</option>
-                        </select>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Search by Meal Type</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select name="mealType">
+                            <option value="breakfast">Breakfast</option>
+                            <option value="brunch">Brunch</option>
+                            <option value="lunch/dinner">Lunch/Dinner</option>
+                            <option value="snack">Snack</option>
+                            <option value="teatime">Tea time</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="column">
+                  <div class="column">
                   <div class="field">
-                    <label class="label">Search by Cuisine</label>
-                    <div class="control">
-                      <div class="select is-medium">
-                        <select>
-                          <option value="american">American</option>
-                          <option value="asian">Asian</option>
-                          <option value="british">British</option>
-                          <option value="caribbean">Caribbean</option>
-                          <option value="central europe">Central Europe</option>
-                          <option value="chinese">Chinese</option>
-                          <option value="eastern europe">Eastern Europe</option>
-                          <option value="french">French</option>
-                          <option value="greek">Greek</option>
-                          <option value="indian">Indian</option>
-                          <option value="italian">Italian</option>
-                          <option value="japanese">Japanese</option>
-                          <option value="korean">Korean</option>
-                          <option value="mediterranean">Mediterranean</option>
-                          <option value="mexican">Mexican</option>
-                          <option value="middle eastern">Middle Eastern</option>
-                          <option value="nordic">Nordic</option>
-                          <option value="south american">South American</option>
-                          <option value="south east asian">South East Asian</option>
-                          <option value="world">World</option>
-                        </select>
+                      <label class="label">Search by Dish Type</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select name="dishType">
+                            <option value="alcohol cocktail">Alcohol Cocktail</option>
+                            <option value="biscuits and cookies">Biscuits and cookies</option>
+                            <option value="bread">Bread</option>
+                            <option value="cereals">Cereals</option>
+                            <option value="condiments and sauces">Condiments and sauces</option>
+                            <option value="desserts">Desserts</option>
+                            <option value="drinks">Drinks</option>
+                            <option value="egg">Egg</option>
+                            <option value="ice cream and custard">Ice cream and custard</option>
+                            <option value="main course">Main course</option>
+                            <option value="pancake">Pancake</option>
+                            <option value="pasta">Pasta</option>
+                            <option value="pastry">Pastry</option>
+                            <option value="pies and tarts">Pies and tarts</option>
+                            <option value="pizza">Pizza</option>
+                            <option value="preps">Preps</option>
+                            <option value="preserve">Preserve</option>
+                            <option value="salad">Salad</option>
+                            <option value="sandwiches">Sandwiches</option>
+                            <option value="seafood">Seafood</option>
+                            <option value="side dish">Side dish</option>
+                            <option value="soup">Soup</option>
+                            <option value="special occasions">Special Occasions</option>
+                            <option value="starter">Starter</option>
+                            <option value="sweets">Sweets</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="column">
-              <div class="field">
-                <label class="label">Customize search according to your health needs!</label>
-                <div class="control box">
-                  <label class="checkbox"><input type="checkbox" value="wheat-free"> Wheat-free</label>
-                  <label class="checkbox"><input type="checkbox" value="gluten-free"> Gluten-free</label>
-                  <label class="checkbox"><input type="checkbox" value="dairy-free"> Dairy-free</label>
-                  <label class="checkbox"><input type="checkbox" value="vegan"> Vegan</label>
-                  <label class="checkbox"><input type="checkbox" value="vegetarian"> Vegetarian</label>
-                  <label class="checkbox"><input type="checkbox" value="tree-nut-free"> Tree nut-free</label>
-                  <label class="checkbox"><input type="checkbox" value="sulfite-free"> Sulfite-free</label>
-                  <label class="checkbox"><input type="checkbox" value="sugar-conscious"> Sugar-conscious</label>
-                  <label class="checkbox"><input type="checkbox" value="soy-free"> Soy-free</label>
-                  <label class="checkbox"><input type="checkbox" value="shellfish-free"> Shellfish-free</label>
-                  <label class="checkbox"><input type="checkbox" value="sesame-free"> Sesame-free</label>
-                  <label class="checkbox"><input type="checkbox" value="red-meat-free"> Red Meat-free</label>
-                  <label class="checkbox"><input type="checkbox" value="pork-free"> Pork-free</label>
-                  <label class="checkbox"><input type="checkbox" value="pescatarian"> Pescatarian</label>
-                  <label class="checkbox"><input type="checkbox" value="peanut-free"> Peanut-free</label>
-                  <label class="checkbox"><input type="checkbox" value="paleo"> Paleo</label>
-                  <label class="checkbox"><input type="checkbox" value="No-oil-added"> No oil added</label>
-                  <label class="checkbox"><input type="checkbox" value="mustard-free"> Mustard-free</label>
-                  <label class="checkbox"><input type="checkbox" value="mollusk-free"> Mollusk-free</label>
-                  <label class="checkbox"><input type="checkbox" value="lupine-free"> Lupine-free</label>
-                  <label class="checkbox"><input type="checkbox" value="low-sugar"> Low sugar</label>
-                  <label class="checkbox"><input type="checkbox" value="low-potassium"> Low potassium</label>
-                  <label class="checkbox"><input type="checkbox" value="kosher"> Kosher</label>
-                  <label class="checkbox"><input type="checkbox" value="kidney-friendly"> Kidney-friendly</label>
-                  <label class="checkbox"><input type="checkbox" value="keto-friendly"> Keto-friendly</label>
-                  <label class="checkbox"><input type="checkbox" value="immuno-supportive"> Immuno-supportive</label>
-                  <label class="checkbox"><input type="checkbox" value="fodmap-free"> FODMAP-free</label>
-                  <label class="checkbox"><input type="checkbox" value="fish-free"> Fish-free</label>
-                  <label class="checkbox"><input type="checkbox" value="egg-free"> Egg-free</label>
-                  <label class="checkbox"><input type="checkbox" value="DASH"> DASH</label>
-                  <label class="checkbox"><input type="checkbox" value="crustacean-free"> Crustacean-free</label>
-                  <label class="checkbox"><input type="checkbox" value="celery-free"> Celery-Free</label>
-                  <label class="checkbox"><input type="checkbox" value="alcohol-free"> Alcohol-free</label>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Search by Cuisine</label>
+                      <div class="control">
+                        <div class="select is-medium">
+                          <select name="cuisineType">
+                            <option value="american">American</option>
+                            <option value="asian">Asian</option>
+                            <option value="british">British</option>
+                            <option value="caribbean">Caribbean</option>
+                            <option value="central europe">Central Europe</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="eastern europe">Eastern Europe</option>
+                            <option value="french">French</option>
+                            <option value="greek">Greek</option>
+                            <option value="indian">Indian</option>
+                            <option value="italian">Italian</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="korean">Korean</option>
+                            <option value="mediterranean">Mediterranean</option>
+                            <option value="mexican">Mexican</option>
+                            <option value="middle eastern">Middle Eastern</option>
+                            <option value="nordic">Nordic</option>
+                            <option value="south american">South American</option>
+                            <option value="south east asian">South East Asian</option>
+                            <option value="world">World</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label">Customize search according to your health needs!</label>
+                  <div class="control box">
+                    <label class="checkbox"><input name="health[]" type="checkbox" value="wheat-free"> Wheat-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="gluten-free"> Gluten-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="dairy-free"> Dairy-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="vegan"> Vegan</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="vegetarian"> Vegetarian</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="tree-nut-free"> Tree nut-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="sulfite-free"> Sulfite-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="sugar-conscious"> Sugar-conscious</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="soy-free"> Soy-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="shellfish-free"> Shellfish-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="sesame-free"> Sesame-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="red-meat-free"> Red Meat-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="pork-free"> Pork-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="pescatarian"> Pescatarian</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="peanut-free"> Peanut-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="paleo"> Paleo</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="No-oil-added"> No oil added</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="mustard-free"> Mustard-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="mollusk-free"> Mollusk-free</label>
+                    <label class="checkbox"><input name="health[]" type="checkbox" value="lupine-free"> Lupine-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="low-sugar"> Low sugar</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="low-potassium"> Low potassium</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="kosher"> Kosher</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="kidney-friendly"> Kidney-friendly</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="keto-friendly"> Keto-friendly</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="immuno-supportive"> Immuno-supportive</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="fodmap-free"> FODMAP-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="fish-free"> Fish-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="egg-free"> Egg-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="DASH"> DASH</label>
+                    <label class="checkbox"><input name="health[]" type="checkbox" value="crustacean-free"> Crustacean-free</label>
+                    <label class="checkbox"><input name="health[]"type="checkbox" value="celery-free"> Celery-Free</label>
+                    <label class="checkbox"><input name="health[]" type="checkbox" value="alcohol-free"> Alcohol-free</label>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-        <!--Fetch button-->
-        <div class="column">
-        <button class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
-        </div>
-        
+          
+          <!--Fetch button-->
+          <div class="column">
+          <button class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
+          </div>
         </section>
+      </form>
         
         <!-- Recipe View -->
       <section id="recipe-view">

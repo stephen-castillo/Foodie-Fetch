@@ -39,5 +39,3 @@ function handleData(data){
 console.log('Data here');
 getRecipe(handleData, recSearch);
 
-// Hide recipe section for now
-document.getElementById('recipe-view').style.display='none';
