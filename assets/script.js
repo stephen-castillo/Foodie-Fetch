@@ -55,3 +55,9 @@ form.addEventListener('submit', (event) => {
   console.log(newarray);
 });
 
+// Hide recipe section for now
+document.getElementById('recipe-view').style.display='none';
+
+// Event listener for keyword search button
+
+// Event listener for Fetch! button
