@@ -30,6 +30,9 @@ CSS gradients - https://cssgradient.io/
 Google Fonts - fonts.google.com  
 Bulma - bulma.io
 
+API used:
+Edamam Recipe Search API - https://developer.edamam.com/edamam-docs-recipe-api
+
 
 ## License
 
