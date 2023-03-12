@@ -1,5 +1,14 @@
 console.log('Javascript working');
 
+// mobile-responsive menu //
+
+const burgerIcon =document.querySelector('#burger');
+const navbarMenu =document.querySelector('#nav-links');
+
+burgerIcon.addEventListener('click',() => {
+    navbarMenu.classList.toggle('is-active');
+})
+
 //Recipe API sample call
 var recSearch = 'Tuna fish sandwich';
 function getRecipe(callback, SearchParm){
@@ -64,4 +73,3 @@ document.getElementById('recipe-view').style.display='none';
 // Event listener for keyword search button
 
 // Event listener for Fetch! button
-
