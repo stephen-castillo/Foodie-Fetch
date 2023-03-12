@@ -21,3 +21,26 @@ Include search bar near top of webpage so user can search by keyword, have secti
 for diet restrictions and allergies. Each type within each section could be a button. Include pictures or icons in addition to text
 titles/labels on the buttons to make it more user friendly and eye-catching (think uber eats interface). Could have option to bookmark
 or make lists of recipes for easy access when revisiting the page (use local storage). -SG
+
+
+https://api.edamam.com/api/recipes/v2?
+type=public
+&q=chicken%20parmagian
+&app_id=172c19d1
+&app_key=f20b386e34889b19ea6df95568e0ae4f
+&health=mustard-free
+&health=paleo
+&health=peanut-free
+&health=pescatarian
+&health=pork-free
+&health=red-meat-free
+&health=soy-free
+&health=sugar-conscious
+&health=sulfite-free
+&health=tree-nut-free
+&health=vegan
+
+https://api.edamam.com/api/recipes/v2?type=public
+&app_key=f20b386e34889b19ea6df95568e0ae4f
+&app_id=172c19d1
+&parameters=%7B%22diet%22%3A%22%22%2C%22mealType%22%3A%22%22%2C%22dishType%22%3A%22%22%2C%22cuisineType%22%3A%22%22%2C%22health%22%3A%5B%22wheat-free%22%2C%22red-meat-free%22%2C%22kosher%22%2C%22celery-free%22%5D%2C%22search%22%3A%22chicken%22%7D
