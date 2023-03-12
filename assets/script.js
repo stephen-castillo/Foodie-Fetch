@@ -103,6 +103,24 @@ function getRecipe(callback, options){
 //function to handle returned data
 function handleData(data){
     console.log(data);
+    //get the recipe div 
+
+    var cRes;
+    for(i=0; i<data.hits.length; i++){
+        cRes = data.hits[i].recipe;
+        $('#recipe-list').append('<div id="recipe'+[i]+'"></div>');
+        //create new div with '<div id="recipe'+[i]+'">
+        //console.log(cRes.images.REGULAR.url);
+        $('#recipe'+[i]).html('<p>'+cRes.label+'</p><figure><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure>');
+        
+        var $newList = $('<ul>').attr('id', 'recList'+[i]);
+        $newList.append($('<caption>').text('Ingredients'));
+        $('#recipe'+[i]).append($newList);
+        for(j=0; j<cRes.ingredientLines.length; j++){
+            $('#recList'+[i]).append('<li>'+cRes.ingredientLines[j]+'</li>');
+        }
+        $('#recipe'+[i]).append('<a href="'+cRes.url+'" target="_blank">How to prepare '+cRes.label+'</a>');
+    }
 }
 //getRecipe('chicken salad');
 
