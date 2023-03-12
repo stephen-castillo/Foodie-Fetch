@@ -39,29 +39,36 @@ form.addEventListener('submit', (event) => {
     form.reset();
 
     //log out the form data
-    //console.log('Form data:', data);
+    console.log('Form data:', data);
 
     //convert form data object into url parameters minus checkbox values
     var inputs = new URLSearchParams(data);
     //make inputs into string
     inputs = inputs.toString();
-    
+    console.log(inputs);
+
     //set substring for search and removal if search is empty
     const subString = 'search=';
 
     //get info from search bar
-    searchVal = $('#searchItem').val();
+    var searchVal = $('#searchItem').val();
     if(searchVal !== null || searchVal !== ''){
-        data.search=searchVal;
-        //console.log('added search');
+        var search = '&q=' + searchVal;
+        inputs = search + '&' + inputs;
+        console.log('added search');
     }else{
         inputs = inputs.replace(subString, '');
-        //console.log('removed search');
+        console.log('removed search');
     }
 
 
-    var params = inputs+'&'+healthParams
-    console.log(params);
+    var params = '';
+    if (healthParams !== ''){
+       params = inputs + '&' + healthParams;
+    }else{
+        params = inputs;
+    }
+    console.log('Params: '+params);
     getRecipe(handleData, params);
 
 });
