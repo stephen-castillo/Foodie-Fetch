@@ -1,6 +1,7 @@
 console.log('Javascript working');
 
 //Recipe API sample call
+
 var recSearch = 'Tuna fish sandwich';
 function getRecipe(callback, SearchParm){
 
@@ -33,29 +34,25 @@ function getRecipe(callback, SearchParm){
 function handleData(data){
     console.log(data);
 }
+//getRecipe('chicken salad');
+
+console.log('Data here');
+//getRecipe(handleData, recSearch);
 
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault(); // prevent the default form submission
+  event.preventDefault(); // prevent the default form submission
 
-    //create new form object on event.target  
-    const formData = new FormData(event.target); // get the form data
-    
-    //add data to form object from input entries
-    const data = Object.fromEntries(formData.entries()); // convert the FormData object to a plain object
-    const data2 = formData.getAll('health');
+  const formData = new FormData(event.target); // get the form data
+  const data = Object.fromEntries(formData.entries()); // convert the FormData object to a plain object
+  const data2 = formData.getAll('health');
 
-    //console.log('Form data:', data);
-    //console.log('checkboxes:', data2);
+  console.log('Form data:', data);
+  console.log('checkboxes:', data2);
 
-    //add checkboxes into form data object
-    data.health = data2;
-
-    //get infor from search bar
-    data.search = $('#searchItem').val();
-    
-    console.log('Form data:', data);
+  var newarray = [...data,...data2];
+  console.log(newarray);
 });
 
 // Hide recipe section for now
@@ -64,4 +61,3 @@ document.getElementById('recipe-view').style.display='none';
 // Event listener for keyword search button
 
 // Event listener for Fetch! button
-
