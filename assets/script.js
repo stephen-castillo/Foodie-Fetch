@@ -66,15 +66,6 @@ form.addEventListener('submit', (event) => {
 
 });
 
-// mobile-responsive menu //
-
-const burgerIcon =document.querySelector('#burger');
-const navbarMenu =document.querySelector('#nav-links');
-
-burgerIcon.addEventListener('click',() => {
-    navbarMenu.classList.toggle('is-active');
-})
-
 //Recipe API sample call
 function getRecipe(callback, options){
 
@@ -103,6 +94,14 @@ function getRecipe(callback, options){
 function handleData(data){
     console.log(data);
 }
+
+// mobile-responsive menu //
+const burgerIcon =document.querySelector('#burger');
+const navbarMenu =document.querySelector('#nav-links');
+
+burgerIcon.addEventListener('click',() => {
+    navbarMenu.classList.toggle('is-active');
+})
 
 // Hide recipe section for now
 document.getElementById('recipe-view').style.display='none';
