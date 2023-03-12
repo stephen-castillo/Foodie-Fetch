@@ -67,7 +67,10 @@ form.addEventListener('submit', (event) => {
 });
 
 //Recipe API sample call
+
 function getRecipe(callback, options){
+
+
 
     const url = 'https://api.edamam.com/api/recipes/v2';
     const params = {
@@ -94,6 +97,11 @@ function getRecipe(callback, options){
 function handleData(data){
     console.log(data);
 }
+//getRecipe('chicken salad');
+
+console.log('Data here');
+//getRecipe(handleData, recSearch);
+
 
 // mobile-responsive menu //
 const burgerIcon =document.querySelector('#burger');
@@ -103,9 +111,14 @@ burgerIcon.addEventListener('click',() => {
     navbarMenu.classList.toggle('is-active');
 })
 
+
+
 // Hide recipe section for now
 document.getElementById('recipe-view').style.display='none';
 
 // Event listener for keyword search button
 
+
+
 // Event listener for Fetch! button
+
