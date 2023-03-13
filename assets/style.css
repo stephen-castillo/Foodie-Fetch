@@ -29,3 +29,8 @@
   border: 1px solid #888;
   width: 80%;
 }
+
+.footer {
+  background: rgb(90,194,99);
+  background: radial-gradient(circle, rgba(90,194,99,1) 0%, rgba(76,130,49,1) 100%);
+}
