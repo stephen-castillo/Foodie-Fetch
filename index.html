@@ -25,9 +25,9 @@
                     <div class="container">
                       <!--Foodie Fetch Title-->
                         <div class="navbar-brand">
-                              <a id="foodie-logo"class="title is-1">
+                              <header id="foodie-logo"class="title is-1">
                                 foodie fetch
-                              </a>
+                              </header>
                           </div>
                         <!--Navbar burger for mobile responsiveness-->
                           <div class="navbar-item">
@@ -40,11 +40,11 @@
                         <!--Navbar menu-->
                             <div id="nav-links" class="navbar-menu">
                               <div class="navbar-end">
-                                <a class="navbar-item is-size-5">
-                                About
+                                <a id="food-fact"class="navbar-item is-size-5">
+                                Another API here? <!--use modal here-->
                                 </a>
                                 <a class="navbar-item is-size-5">
-                                Randomize
+                                Surprise me
                                 </a>
                                 <a class="navbar-item"> 
                                         <span class="icon is-left">
@@ -216,65 +216,27 @@
           
           <!--Fetch button-->
           <div class="column">
-          <button class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
+          <button id="open-modal-btn" class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
           </div>
         </section>
       </form>
 
       <!--Recipe list view-->
-      <section id="recipe-list">
-        <h2>Recipe list view</h2>
-        <!--Content here-->
-      </section>
+      <section>
         
-        <!-- Recipe View -->
-      <section id="recipe-view">
-        <div class="tile is-ancestor">
-            <div class="tile is-vertical is-8">
-              <div class="tile">
-                <div class="tile is-parent is-vertical">
-                  <article id="recpName" class="tile is-child notification Recipe-Name">
-                    <p class="title">Recipe Name</p> <!--replace-->
-                  </article>
-                  <article class="tile is-child notification">
-                    <p class="title">Nutritional Facts</p>
-                    <div id="recpNutFa" class="content Nutritional-Facts"></div>
-                  </article>
-                </div>
-
-                <div class="tile is-parent">
-                  <article class="tile is-child notification">
-                    <figure id="recpImg" class="image is-4by3">
-                      <img src="https://bulma.io/images/placeholders/640x480.png">
-                    </figure>
-                  </article>
-                </div>
-              </div>
-
-              <div class="tile is-parent">
-                <article class="tile is-child notification">
-                  <p class="title">Instructions</p>
-                  <div  id="recpInstr" class="content Instructions">
-                    <!-- Content -->
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <div class="content">
-                  <p class="title">Ingredients</p>
-                  <div id="recpIngred" class="content Ingredients">
-                    <!-- Content -->
-                  </div>
-                </div>
-              </article>
+        <div id="my-modal" class="modal">
+          <div class="modal-content">
+            <div class="box">
+              <h1 class="title is-4">Ok! Here's what I found.</h1>
+              <br>
+              <div id="recipe-list" class=""></div>
+              <button id="close-modal-btn" class="modal-close is-large" aria-label="close"></button>
+              
             </div>
           </div>
         </div>
+  
       </section>
-
        
 
 
