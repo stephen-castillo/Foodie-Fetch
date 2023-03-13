@@ -189,3 +189,60 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+// Add event listener to Surprise me button to display when clicked
+var random = document.getElementById('surprise me');
+console.log(random);
+random.addEventListener('click', () => {
+
+    var data = new Object();
+
+    //console.log('random');
+    var mt = document.getElementById('mealType').children;
+    mnum = Math.floor(Math.random() * mt.length);
+    var mealType = mt[mnum].value;
+
+    var d = document.getElementById('diet').children;
+    dnum = Math.floor(Math.random() * d.length);
+    var diet = d[dnum].value;
+
+    var dt = document.getElementById('dishType').children;
+    dtnum = Math.floor(Math.random() * dt.length);
+    var dishType = dt[dtnum].value;
+
+    var ct = document.getElementById('cuisineType').children;
+    ctnum = Math.floor(Math.random() * ct.length);
+    var cuisineType = ct[ctnum].value;
+
+    console.log(mealType + ', ' + diet + ', ' + dishType + ', ' + cuisineType);
+
+    if(mealType === 'None' && diet === 'None' && dishType === 'None' && cuisineType === 'None'){
+        mealType = 'Breakfast';
+    }
+
+    if(mealType !== ''){
+        data.mealType = mealType;
+    }
+    if(diet !== ''){
+        data.diet = diet;
+    }
+    if(dishType !== ''){
+        data.dishType = dishType;
+    }
+    if(cuisineType !== ''){
+        data.cuisineType = cuisineType;
+    }
+    data.type='public';
+    data.app_key = 'f20b386e34889b19ea6df95568e0ae4f';
+    data.app_id = '172c19d1';
+
+    console.log(data);
+
+    var inputs = new URLSearchParams(data);
+    //make inputs into string
+    inputs = inputs.toString();
+    console.log(inputs);
+
+    getRecipe(handleData, inputs);
+
+});
