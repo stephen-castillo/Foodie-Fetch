@@ -138,6 +138,27 @@ burgerIcon.addEventListener('click',() => {
     navbarMenu.classList.toggle('is-active');
 })
 
+function makeQuote(){
+    var category = 'food'
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+        headers: { 'X-Api-Key': 'N8zW2v/RR3UTP00/EDXFlg==QTdAqwC9oFjO9PGS'},
+        contentType: 'application/json',
+        success: function(result) {
+            console.log(result);
+            var quote = result[0].quote;
+            var author = result[0].author;
+            console.log(quote+' - '+author);
+            $('#quote').append('<p><b>'+quote+'-'+author+'</b></p>');
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+}
+
+
 // Modal for Individual recipes
 
 // Get a reference to the button element
@@ -253,3 +274,5 @@ random.addEventListener('click', () => {
     getRecipe(handleData, inputs);
 
 });
+
+makeQuote();
