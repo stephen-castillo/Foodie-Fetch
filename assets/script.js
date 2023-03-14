@@ -108,19 +108,21 @@ function handleData(data){
     var cRes;
     for(i=0; i<data.hits.length; i++){
         cRes = data.hits[i].recipe;
-        $('#recipe-list').append('<div id="recipe'+[i]+'"></div>');
+        $('#recipe-list').append('<div class="recipe_modal" id="recipe'+[i]+'"></div>');
         //create new div with '<div id="recipe'+[i]+'">
         //console.log(cRes.images.REGULAR.url);
-        $('#recipe'+[i]).html('<p>'+cRes.label+'</p><figure><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure>');
+        $('#recipe'+[i]).append('<h4 class="modal_header"><b>'+cRes.label+'</b></h4><br><figure class="modal_image"><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure><br><br>');
         
         var $newList = $('<ul>').attr('id', 'recList'+[i]);
-        $newList.append($('<caption>').text('Ingredients'));
+        $newList.append($('<b><caption class="modal_ingred">').text('Ingredients'));
         $('#recipe'+[i]).append($newList);
         for(j=0; j<cRes.ingredientLines.length; j++){
             $('#recList'+[i]).append('<li>'+cRes.ingredientLines[j]+'</li>');
         }
-        $('#recipe'+[i]).append('<a href="'+cRes.url+'" target="_blank">How to prepare '+cRes.label+'</a>');
+        $('#recipe'+[i]).append('<br><a class="modal_link" href="'+cRes.url+'" target="_blank">How to prepare '+cRes.label+'</a><hr style="height:5px; background-color: #787e87;">');
+    
     }
+    console.log($('#recipe-list').html());
 }
 //getRecipe('chicken salad');
 
