@@ -1,57 +1,51 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/5c325a6b3d.js" crossorigin="anonymous"></script>
-        <title>Foodie Fetch</title>
+        <title>foodie fetch</title>
     </head>
 
     <body>
         <!--Main banner with Navbar(always constant)-->
-        <section class="hero is-success">
+        <section class="hero is-dark">
             <div class="hero-body">
-                <nav class="navbar" role="navigation" aria-label="main navigation">
+                <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
                     <div class="container">
                       <!--Foodie Fetch Title-->
                         <div class="navbar-brand">
-                              <header id="foodie-logo"class="title is-1">
+                              <header id="foodie-logo"class="title is-1 has-text-white">
                                 foodie fetch
                               </header>
-                          </div>
+                          
                         <!--Navbar burger for mobile responsiveness-->
                           <div class="navbar-item">
-                              <a id="burger" class="navbar-burger">
-                              <span></span>
-                              <span></span>
-                              <span></span>
+                              <a role="button" id="burger" class="navbar-burger" data-target="nav-links" aria-label="menu" aria-expanded="false">
+                              <span aria-hidden="true"></span>
+                              <span aria-hidden="true"></span>
+                              <span aria-hidden="true"></span>
                               </a>
                             </div>
+                        </div>
                         <!--Navbar menu-->
                             <div id="nav-links" class="navbar-menu">
                               <div class="navbar-end">
-                                <a id="food-fact"class="navbar-item is-size-5">
-                                Another API here? <!--use modal here-->
-                                </a>
-                                <a class="navbar-item is-size-5" id = "surprise me" input type="submit">
+                                <a class="navbar-item is-size-5 has-text-white" id = "surprise me" input type="submit">
                                 Surprise me
                                 </a>
-                                <a class="navbar-item"> 
+                                <div class="navbar-item"> 
                                         <span class="icon is-left">
                                             <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
                                         </span>
                                     <input id="searchItem" class="input is-rounded" type="text" placeholder="Search by keyword">
-                                </a>
+                                </div>
                               </div>
                             </div>
                       </div>
@@ -59,8 +53,9 @@
               </div>
         </section>
 
+        <!--Randomly generated quote under hero-->
         <section>
-          <h2 id="quote"></h2>
+          <h2 id="quote" class="has-text-white has-text-centered"></h2>
         </section>
 
         <!--Keyword Archive from Search Bar-->
@@ -70,15 +65,15 @@
 
         <!--Home page/main view-->
         <form action="self">
-          <section class="section is-medium has-background-info-light">
+          <section class="section is-medium">
 
-              <h1 class="title is-4">
+              <h1 class="title is-3 has-text-centered has-text-weight-bold has-text-white pb-6">
                       Category Selection
               </h1>
               <div class="columns">
                   <div class="column">
                   <div class="field">
-                      <label class="label">Search by Diet</label>
+                      <label class="label subtitle is-4 has-text-white">Search by Diet</label>
                       <div class="control">
                         <div class="select is-medium">
                           <select name="diet" id ="diet">
@@ -96,7 +91,7 @@
                   </div>
                   <div class="column">
                     <div class="field">
-                      <label class="label">Search by Meal Type</label>
+                      <label class="label subtitle is-4 has-text-white">Search by Meal Type</label>
                       <div class="control">
                         <div class="select is-medium">
                           <select name="mealType" id ="mealType">
@@ -113,7 +108,7 @@
                   </div>
                   <div class="column">
                   <div class="field">
-                      <label class="label">Search by Dish Type</label>
+                      <label class="label subtitle is-4 has-text-white">Search by Dish Type</label>
                       <div class="control">
                         <div class="select is-medium">
                           <select name="dishType" id="dishType">
@@ -150,7 +145,7 @@
                   </div>
                   <div class="column">
                     <div class="field">
-                      <label class="label">Search by Cuisine</label>
+                      <label class="label subtitle is-4 has-text-white">Search by Cuisine</label>
                       <div class="control">
                         <div class="select is-medium">
                           <select name="cuisineType" id ="cuisineType">
@@ -184,7 +179,7 @@
               </div>
               <div class="column">
                 <div class="field">
-                  <label class="label">Customize search according to your health needs!</label>
+                  <label class="label subtitle is-4 has-text-white">Customize search according to your health needs!</label>
                   <div class="control box">
                     <label class="checkbox"><input name="health[]" type="checkbox" value="wheat-free"> Wheat-free</label>
                     <label class="checkbox"><input name="health[]"type="checkbox" value="gluten-free"> Gluten-free</label>
@@ -227,7 +222,7 @@
           <div class="column">
           <button id="open-modal-btn" class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
           </div>
-        </section>
+        </section> 
       </form>
 
       <!--Recipe list view-->
@@ -246,7 +241,7 @@
         </div>
   
       </section>
-       
+
 
 
         <!-- jQuery first, then Popper.js -->
@@ -255,11 +250,11 @@
 
         <!-- Optional JavaScript -->
         <script src="./assets/script.js" async defer></script>
-        <footer class="footer">
+        <footer class="footer has-text-white">
             <div class="content has-text-centered">
-              <p><strong>Powered by: </strong><a href="https://cssgradient.io/">CSS gradients</a>, <a href="fonts.google.com">Google Fonts</a>, <a href="bulma.io">Bulma</a>
-                <br><strong> Api's used:</strong><a href="https://developer.edamam.com/edamam-docs-recipe-">Edamam Recipe Search API</a> and <a href="https://developer.edamam.com/edamam-docs-recipe-">Edamam Recipe Search API</a><br>
-                <strong>Collaborators:</strong>   Stephen Castillo,
+              <p><strong class="has-text-white">Powered by: </strong><a href="https://cssgradient.io/">CSS gradients</a>, <a href="fonts.google.com">Google Fonts</a>, <a href="bulma.io">Bulma</a>
+                <br><strong class="has-text-white"> Api's used:</strong><a href="https://developer.edamam.com/edamam-docs-recipe-">Edamam Recipe Search API</a> and <a href="https://api-ninjas.com/api">API-Ninjas</a><br>
+                <strong class="has-text-white">Collaborators:</strong>   Stephen Castillo,
                                                   Sandra Gutierrez,
                                                   Michael Muniz 
               </p>
