@@ -8,7 +8,7 @@ User Story:
 
 AS A person who likes to cook
 I WANT to easily find recipes according to my specifications
-SO THAT I can have multiple options without having to filter them manually
+SO THAT I can have multiple options for every occasion
 
 APIs to be used:
 
