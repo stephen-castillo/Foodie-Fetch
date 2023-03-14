@@ -138,6 +138,7 @@ burgerIcon.addEventListener('click',() => {
     navbarMenu.classList.toggle('is-active');
 })
 
+// Quote API call
 function makeQuote(){
     var category = 'food'
     $.ajax({
@@ -157,36 +158,6 @@ function makeQuote(){
         }
     });
 }
-
-
-// Modal for Individual recipes
-
-// Get a reference to the button element
-//const openModalBtn = document.getElementById('open-modal-btn');
-
-// Attach an event listener to the button
-//openModalBtn.addEventListener('click', () => {
-  // Fetch data from server
- // fetch('data.json')
-  //  .then(response => response.json())
-  //  .then(data => {
-      // Insert data into modal content container
-   //   document.getElementById('modal-content').innerHTML = data.text;
-      // Display modal
-   //   document.getElementById('modal').style.display = 'block';
-  //  });
-//});
-
-//Using jquery
-//$('#open-modal-btn').on('click', function() {
-  //  $.getJSON('data.json', function(data) {
-   //   $('#modal-content').html(data.text);
-   //   $('#modal').css('display', 'block');
-  //  });
- // });
-
- //using openModal () function with fetch request
-
 
 
  //MODAL for returned data in recipe list//
