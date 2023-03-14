@@ -193,7 +193,12 @@ window.addEventListener('click', (event) => {
 // Add event listener to Surprise me button to display when clicked
 var random = document.getElementById('surprise me');
 console.log(random);
+
+// and event listener for it to open modal
+
+
 random.addEventListener('click', () => {
+    modal.style.display = 'block';
 
     var data = new Object();
 
