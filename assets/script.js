@@ -90,15 +90,37 @@ function getRecipe(callback, options){
     //console.log('what sending: '+`${url}?${query.toString()}`, params);
     console.log('what sending: '+`${url}?${options}`, params);
     fetch(`${url}?${options}`, params)
-    .then(response => response.json())
+    .then(response => {
+        if(!response.ok){
+            throw new Error('Opps, something went wrong.<br>Unable to retrieve recipe at this time.<br>Please close this window and try again.');
+        }
+        return response.json();
+    })
     .then(data => {
         //console.log(data);
-        callback(data);
+        if(data.hits.length !==0){
+            callback(data);
+        }else{
+            getRecipe(callback, options)
+        }
+        
         //callback(apiData);
         //console.log(apiData);
     })
-    .catch(error => console.error(error));
+    .catch(error => {
+        console.log(error.message);
+        $('#modaH1').html('Opps, something went wrong.<br>Unable to retrieve a recipe at this time.<br>Please close this window and try again.');
+        refreshPage();
+        }
+    );
 }
+
+function refreshPage() {
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
+}  
+
 
 //function to handle returned data
 function handleData(data){
@@ -108,31 +130,42 @@ function handleData(data){
     var cRes;
     for(i=0; i<data.hits.length; i++){
         cRes = data.hits[i].recipe;
-        $('#recipe-list').append('<div class="recipe_modal" id="recipe'+[i]+'"></div>');
+        cResSplit = cRes.uri;
+        cResSplit = cResSplit.split('#');
+        cResID = cResSplit[1];
+        console.log(cResID);
+        $('#recipe-list').append('<div class="recipe_modal" id="'+cResID+'"></div>');
         //create new div with '<div id="recipe'+[i]+'">
         //console.log(cRes.images.REGULAR.url);
-        $('#recipe'+[i]).append('<h4 class="modal_header"><b>'+cRes.label+'</b></h4><br><button class="button" id="saveBtn"></button><figure class="modal_image"><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure><br><br>');
+        $('#'+cResID).append('<h4 class="modal_header"><b>'+cRes.label+'</b></h4><br><figure class="modal_image"><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure><br><br>');
         
         var $newList = $('<ul>').attr('id', 'recList'+[i]);
         $newList.append($('<b><caption class="modal_ingred">').text('Ingredients'));
-        $('#recipe'+[i]).append($newList);
+        $('#'+cResID).append($newList);
         for(j=0; j<cRes.ingredientLines.length; j++){
             $('#recList'+[i]).append('<li>'+cRes.ingredientLines[j]+'</li>');
         }
-        $('#recipe'+[i]).append('<br><a class="modal_link" href="'+cRes.url+'" target="_blank">How to prepare '+cRes.label+'</a><hr style="height:5px; background-color: #787e87;">');
+        $('#'+cResID).append('<br><a class="modal_link" href="'+cRes.url+'" target="_blank">How to prepare '+cRes.label+'</a><br><button class="recipe_button" id="btn_'+cResID+'" onclick="saveRec(event)">Save Recipe</button><hr style="height:5px; background-color: #787e87;">');
     
-    $('#saveBtn').click(function(){
-       cRes = JSON.stringify(cRes);
-       localStorage.setItem(cRes.label, cRes);
-    })
-    console.log($('#recipe-list').html());
-}
-//getRecipe('chicken salad');
+        
+        //console.log($('#recipe-list').html());
+    }
+    //getRecipe('chicken salad');
 
-console.log('Data here');
-//getRecipe(handleData, recSearch);
+    console.log('Data here');
+    //getRecipe(handleData, recSearch);
 }
 
+function saveRec(event){
+    event.preventDefault();
+    var saveID = event.target.parentElement.getAttribute('id');
+    saveID = saveID.toString();
+    var saveData = $('#'+saveID).html();
+    saveData = JSON.stringify(saveData);
+    console.log(saveData);
+    localStorage.setItem(saveID,saveData);
+
+}
 //function showArchive(){
 //    var archive = Object.keys(localStorage).sort();
 //    for(i=0; i<archive.length; i++){
@@ -157,7 +190,7 @@ burgerIcon.addEventListener('click',() => {
 
 // Quote API call
 function makeQuote(){
-    var category = 'food'
+    var category = 'food';
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
@@ -206,6 +239,7 @@ var random = document.getElementById('surprise me');
 console.log(random);
 
 // and event listener for it to open modal
+
 
 
 random.addEventListener('click', () => {
