@@ -71,7 +71,7 @@ form.addEventListener('submit', (event) => {
     }
     console.log('Params: '+params);
     if(params.includes('&q=&')){
-        params = params.replace('&q=&', '&');
+        params = params.replace('&q=&', '');
         console.log('Params2: '+params);
     }
     getRecipe(handleData, params);
