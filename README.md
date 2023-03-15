@@ -43,9 +43,9 @@ Note for mobile users: To view the navbar items, tap the icon to the right of th
 
 Happy cooking!  
 
-    ![](assets/images/foodie-fetch-screenshot.png)
-    ![](assets/images/recipe-fetch-modal-screen.png)
-    ![](assets/images/saved-recipes-gif.gif)
+![screenshot](assets/images/foodie-fetch-screenshot.png)
+![Results modal](assets/images/recipe-fetch-modal-screen.png)
+![Saved recipes modal](assets/images/saved-recipes-gif.gif)
 
 
 ## Credits
