@@ -41,7 +41,9 @@ Each time the site is opened or refreshed, you will be greeted with a food-relat
 
 Note for mobile users: To view the navbar items, tap the icon to the right of the site's title logo.  
 
+
 Happy cooking!   
+
 
 ![](assets/images/foodie-fetch-screenshot.png)
 ![](assets/images/recipe-fetch-modal-screen.png) 
