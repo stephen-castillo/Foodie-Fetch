@@ -172,19 +172,7 @@ function saveRec(event){
     localStorage.setItem(saveID,saveData);
 
 }
-//function showArchive(){
-//    var archive = Object.keys(localStorage).sort();
-//    for(i=0; i<archive.length; i++){
- //       var recipeKey = archive[i];
- //       var havethis = localStorage.getItem(archive[i]);
- //       value = JSON.parse(cRes);
- //       //format the value data
 
-        //make the formated value data a variable;
-   //     var formatted = 'formatted data'; //actually put the data here
-  //      $('#archive').append(formatted);
-   // }
-//}
 
 // mobile-responsive menu //
 const burgerIcon =document.querySelector('#burger');
@@ -215,10 +203,8 @@ function makeQuote(){
     });
 }
 
-
+/////
  //MODAL for returned data in recipe list//
-
- // Get references
 const openModalBtn = document.getElementById('open-modal-btn'); //get reference to Fetch! button as the open-modal-btn
 const closeModalBtn = document.getElementById('close-modal-btn'); //get reference to close modal btn
 const modal = document.getElementById('my-modal'); //get reference to modal container in div
@@ -240,19 +226,47 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// MODAL for saved recipes in local storage //
+// MODAL for retrieving saved recipes in local storage //
 const saveRecBtn = document.getElementById('saved-rec-btn');
 const secondModal = document.getElementById('saved-modal');
 
 saveRecBtn.addEventListener('click', () => {
     secondModal.style.display = 'block';
-});
+    const savedRecipesElement = document.getElementById('saved-recipes');
+    if (!savedRecipesElement) {
+      console.error('Could not find element with id "saved-recipes"');
+      return;
+    }
+    const saveIDs = Object.keys(localStorage).sort();
+    let savedRecipesHTML = '';
+    for (let i = 0; i < saveIDs.length; i++) {
+      const saveID = saveIDs[i];
+      const saveData = localStorage.getItem(saveID);
+      if (!saveData) {
+        console.error(`Could not find data for key "${saveID}"`);
+        continue;
+      }
+      const parsedData = JSON.parse(saveData);
+      savedRecipesHTML += parsedData;
+    }
+    savedRecipesElement.innerHTML = savedRecipesHTML;
+  });
+
+  // Event listener for button to clear saved recipes
+    document.getElementById('clear-saved-recipes').addEventListener('click', () => {
+    // Clear all saved data from localStorage
+    localStorage.clear();
+    // Clear the saved-recipes element in the modal
+    document.getElementById('saved-recipes').innerHTML = '';
+  });
+  
+// Event listener to click out of saved recipe modal
 window.addEventListener('click', (event) => {
     if (event.target == secondModal) {
       secondModal.style.display = 'none';
     }
   });
-  
+///////
 
 // Add event listener to Surprise me button to display when clicked
 var random = document.getElementById('surprise me');
