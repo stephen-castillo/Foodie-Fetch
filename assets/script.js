@@ -52,7 +52,7 @@ form.addEventListener('submit', (event) => {
 
     //get info from search bar
     var searchVal = $('#searchItem').val();
-    if(searchVal !== null || searchVal !== ''){
+    if(searchVal !== null || searchVal !== '' || searchVal !== ' '){
         var search = '&q=' + searchVal;
         inputs = search + '&' + inputs;
         console.log('added search');
