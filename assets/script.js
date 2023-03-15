@@ -1,3 +1,4 @@
+
 //console.log('Javascript working');
 
 //javascrpt get form
@@ -264,5 +265,3 @@ random.addEventListener('click', () => {
     getRecipe(handleData, inputs);
 
 });
-
-makeQuote();
