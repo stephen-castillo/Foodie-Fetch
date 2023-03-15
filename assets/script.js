@@ -52,6 +52,7 @@ form.addEventListener('submit', (event) => {
 
     //get info from search bar
     var searchVal = $('#searchItem').val();
+    console.log(searchVal);
     if(searchVal !== null || searchVal !== '' || searchVal !== ' '){
         var search = '&q=' + searchVal;
         inputs = search + '&' + inputs;
@@ -111,7 +112,7 @@ function getRecipe(callback, options){
     .catch(error => {
         console.log(error.message);
         $('#modaH1').html('Opps, something went wrong.<br>Unable to retrieve a recipe at this time.<br>This page will automatically refresh.');
-        refreshPage(3000);
+        //refreshPage(3000);
         }
     );
 }
