@@ -215,14 +215,16 @@
 
           <!--Fetch button-->
           <div class="column">
-          <button id="open-modal-btn" class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
+            <button id="open-modal-btn" class="button is-success is-medium is-rounded" input type="submit">Fetch!</button>
+          
+          <!--Saved Recipes button-->
+            <button id="saved-rec-btn" class="button is-danger is-medium is-rounded">Saved Recipes</button>
           </div>
         </section> 
       </form>
 
       <!--Recipe list view-->
       <section>
-        
         <div id="my-modal" class="modal">
           <div class="modal-content">
             <div class="box">
@@ -230,11 +232,21 @@
               <br>
               <div id="recipe-list" class=""></div>
               <button id="close-modal-btn" class="modal-close is-large" aria-label="close"></button>
-              
             </div>
           </div>
         </div>
-  
+      </section>
+
+      <!--View saved recipes modal-->
+      <section>
+        <div id="saved-modal" class="modal">
+          <div class="modal-content">
+            <div class="box">
+              <h1 class="title is-4">Your saved recipes</h1>
+              <br>
+            </div>
+          </div>
+        </div>
       </section>
 
 

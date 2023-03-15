@@ -111,7 +111,7 @@ function handleData(data){
         $('#recipe-list').append('<div class="recipe_modal" id="recipe'+[i]+'"></div>');
         //create new div with '<div id="recipe'+[i]+'">
         //console.log(cRes.images.REGULAR.url);
-        $('#recipe'+[i]).append('<h4 class="modal_header"><b>'+cRes.label+'</b></h4><br><button class="button" id="saveBtn"></button><figure class="modal_image"><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure><br><br>');
+        $('#recipe'+[i]).append('<h4 class="modal_header"><b>'+cRes.label+'</b></h4><br><i class="button fa-solid fa-floppy-disk" id="saveBtn"></i><figure class="modal_image"><img src="'+cRes.images.REGULAR.url+'" alt="Picture of '+cRes.label+'" height="300px" width="300px"></figure><br><br>');
         
         var $newList = $('<ul>').attr('id', 'recList'+[i]);
         $newList.append($('<b><caption class="modal_ingred">').text('Ingredients'));
@@ -133,19 +133,6 @@ console.log('Data here');
 //getRecipe(handleData, recSearch);
 }
 
-//function showArchive(){
-//    var archive = Object.keys(localStorage).sort();
-//    for(i=0; i<archive.length; i++){
- //       var recipeKey = archive[i];
- //       var havethis = localStorage.getItem(archive[i]);
- //       value = JSON.parse(cRes);
- //       //format the value data
-
-        //make the formated value data a variable;
-   //     var formatted = 'formatted data'; //actually put the data here
-  //      $('#archive').append(formatted);
-   // }
-//}
 
 // mobile-responsive menu //
 const burgerIcon =document.querySelector('#burger');
@@ -200,6 +187,21 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+
+// MODAL for saved recipes in local storage //
+const saveRecBtn = document.getElementById('saved-rec-btn');
+const secondModal = document.getElementById('saved-modal');
+
+saveRecBtn.addEventListener('click', () => {
+    secondModal.style.display = 'block';
+});
+window.addEventListener('click', (event) => {
+    if (event.target == secondModal) {
+      secondModal.style.display = 'none';
+    }
+  });
+
 
 // Add event listener to Surprise me button to display when clicked
 var random = document.getElementById('surprise me');
