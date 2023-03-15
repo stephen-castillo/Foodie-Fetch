@@ -240,6 +240,20 @@ window.addEventListener('click', (event) => {
   }
 });
 
+// MODAL for saved recipes in local storage //
+const saveRecBtn = document.getElementById('saved-rec-btn');
+const secondModal = document.getElementById('saved-modal');
+
+saveRecBtn.addEventListener('click', () => {
+    secondModal.style.display = 'block';
+});
+window.addEventListener('click', (event) => {
+    if (event.target == secondModal) {
+      secondModal.style.display = 'none';
+    }
+  });
+  
+
 // Add event listener to Surprise me button to display when clicked
 var random = document.getElementById('surprise me');
 console.log(random);
