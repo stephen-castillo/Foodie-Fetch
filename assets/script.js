@@ -85,6 +85,7 @@ function getRecipe(callback, options){
         headers: {
             'Content-Type': 'application/json'
         }
+        
     };
 
     //console.log('what sending: '+`${url}?${query.toString()}`, params);
@@ -92,16 +93,16 @@ function getRecipe(callback, options){
     fetch(`${url}?${options}`, params)
     .then(response => {
         if(!response.ok){
-            throw new Error('Opps, something went wrong.<br>Unable to retrieve recipe at this time.<br>Please close this window and try again.');
+            throw new Error('Opps, something went wrong.<br>Unable to retrieve recipe at this time.<br>This page will automatically refresh.');
         }
         return response.json();
     })
     .then(data => {
-        //console.log(data);
-        if(data.hits.length !==0){
-            callback(data);
+        console.log(data.hits.length);
+        if(data.hits.length === 0 ){
+            random.click();
         }else{
-            getRecipe(callback, options)
+            callback(data);
         }
         
         //callback(apiData);
@@ -109,22 +110,22 @@ function getRecipe(callback, options){
     })
     .catch(error => {
         console.log(error.message);
-        $('#modaH1').html('Opps, something went wrong.<br>Unable to retrieve a recipe at this time.<br>Please close this window and try again.');
-        refreshPage();
+        $('#modaH1').html('Opps, something went wrong.<br>Unable to retrieve a recipe at this time.<br>This page will automatically refresh.');
+        refreshPage(3000);
         }
     );
 }
 
-function refreshPage() {
+function refreshPage(mt) {
     setTimeout(() => {
       window.location.reload();
-    }, 3000);
+    }, mt);
 }  
 
 
 //function to handle returned data
 function handleData(data){
-    console.log(data);
+    //console.log(data);
     //get the recipe div 
 
     var cRes;
@@ -133,7 +134,7 @@ function handleData(data){
         cResSplit = cRes.uri;
         cResSplit = cResSplit.split('#');
         cResID = cResSplit[1];
-        console.log(cResID);
+        console.log('Recipe ID: '+cResID);
         $('#recipe-list').append('<div class="recipe_modal" id="'+cResID+'"></div>');
         //create new div with '<div id="recipe'+[i]+'">
         //console.log(cRes.images.REGULAR.url);
@@ -162,7 +163,7 @@ function saveRec(event){
     saveID = saveID.toString();
     var saveData = $('#'+saveID).html();
     saveData = JSON.stringify(saveData);
-    console.log(saveData);
+    //console.log(saveData);
     localStorage.setItem(saveID,saveData);
 
 }
@@ -264,10 +265,8 @@ random.addEventListener('click', () => {
     ctnum = Math.floor(Math.random() * ct.length);
     var cuisineType = ct[ctnum].value;
 
-    console.log(mealType + ', ' + diet + ', ' + dishType + ', ' + cuisineType);
-
-    if(mealType === 'None' && diet === 'None' && dishType === 'None' && cuisineType === 'None'){
-        mealType = 'Breakfast';
+    if(mealType === '' && diet === '' && dishType === '' && cuisineType === ''){
+        mealType = 'Lunch';
     }
 
     if(mealType !== ''){
@@ -282,6 +281,8 @@ random.addEventListener('click', () => {
     if(cuisineType !== ''){
         data.cuisineType = cuisineType;
     }
+    console.log('Drop downs: '+mealType + ', ' + diet + ', ' + dishType + ', ' + cuisineType);
+
     data.type='public';
     data.app_key = 'f20b386e34889b19ea6df95568e0ae4f';
     data.app_id = '172c19d1';
@@ -291,10 +292,11 @@ random.addEventListener('click', () => {
     var inputs = new URLSearchParams(data);
     //make inputs into string
     inputs = inputs.toString();
-    console.log(inputs);
+    console.log('Inputs: '+inputs);
 
     getRecipe(handleData, inputs);
 
 });
+$('#my-modal').children('div').append('<button class="reset" id="reset" onclick="refreshPage(100)">Reset recipes</button>');
 
 makeQuote();
